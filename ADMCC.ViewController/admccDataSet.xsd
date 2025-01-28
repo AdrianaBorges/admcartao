@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="admccDataSet" targetNamespace="http://tempuri.org/admccDataSet.xsd" xmlns:mstns="http://tempuri.org/admccDataSet.xsd" xmlns="http://tempuri.org/admccDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="admccConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="admccConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ADMCC.ViewController.My.MySettings.GlobalReference.Default.admccConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ListaTransacoes_VWTableAdapter" GeneratorDataComponentClassName="ListaTransacoes_VWTableAdapter" Name="ListaTransacoes_VW" UserDataComponentName="ListaTransacoes_VWTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="admccConnectionString (MySettings)" DbObjectName="admcc.dbo.ListaTransacoes_VW" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT idtransacao, Cliente, IdBandeira, Operadora, IdCartao, Cartao, Valor, Data, Categoria, Descricao FROM dbo.ListaTransacoes_VW</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idtransacao" DataSetColumn="idtransacao" />
+              <Mapping SourceColumn="Cliente" DataSetColumn="Cliente" />
+              <Mapping SourceColumn="IdBandeira" DataSetColumn="IdBandeira" />
+              <Mapping SourceColumn="Operadora" DataSetColumn="Operadora" />
+              <Mapping SourceColumn="IdCartao" DataSetColumn="IdCartao" />
+              <Mapping SourceColumn="Cartao" DataSetColumn="Cartao" />
+              <Mapping SourceColumn="Valor" DataSetColumn="Valor" />
+              <Mapping SourceColumn="Data" DataSetColumn="Data" />
+              <Mapping SourceColumn="Categoria" DataSetColumn="Categoria" />
+              <Mapping SourceColumn="Descricao" DataSetColumn="Descricao" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="admccDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="admccDataSet" msprop:Generator_DataSetName="admccDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ListaTransacoes_VW" msprop:Generator_RowEvHandlerName="ListaTransacoes_VWRowChangeEventHandler" msprop:Generator_RowDeletedName="ListaTransacoes_VWRowDeleted" msprop:Generator_RowDeletingName="ListaTransacoes_VWRowDeleting" msprop:Generator_RowEvArgName="ListaTransacoes_VWRowChangeEvent" msprop:Generator_TablePropName="ListaTransacoes_VW" msprop:Generator_RowChangedName="ListaTransacoes_VWRowChanged" msprop:Generator_RowChangingName="ListaTransacoes_VWRowChanging" msprop:Generator_TableClassName="ListaTransacoes_VWDataTable" msprop:Generator_RowClassName="ListaTransacoes_VWRow" msprop:Generator_TableVarName="tableListaTransacoes_VW" msprop:Generator_UserTableName="ListaTransacoes_VW">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idtransacao" msprop:Generator_ColumnPropNameInRow="idtransacao" msprop:Generator_ColumnPropNameInTable="idtransacaoColumn" msprop:Generator_ColumnVarNameInTable="columnidtransacao" msprop:Generator_UserColumnName="idtransacao" type="xs:int" />
+              <xs:element name="Cliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_UserColumnName="Cliente">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdBandeira" msprop:Generator_ColumnPropNameInRow="IdBandeira" msprop:Generator_ColumnPropNameInTable="IdBandeiraColumn" msprop:Generator_ColumnVarNameInTable="columnIdBandeira" msprop:Generator_UserColumnName="IdBandeira" type="xs:int" />
+              <xs:element name="Operadora" msprop:Generator_ColumnPropNameInRow="Operadora" msprop:Generator_ColumnPropNameInTable="OperadoraColumn" msprop:Generator_ColumnVarNameInTable="columnOperadora" msprop:Generator_UserColumnName="Operadora">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdCartao" msprop:Generator_ColumnPropNameInRow="IdCartao" msprop:Generator_ColumnPropNameInTable="IdCartaoColumn" msprop:Generator_ColumnVarNameInTable="columnIdCartao" msprop:Generator_UserColumnName="IdCartao" type="xs:int" />
+              <xs:element name="Cartao" msprop:Generator_ColumnPropNameInRow="Cartao" msprop:Generator_ColumnPropNameInTable="CartaoColumn" msprop:Generator_ColumnVarNameInTable="columnCartao" msprop:Generator_UserColumnName="Cartao">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Valor" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Valor" msprop:Generator_ColumnPropNameInTable="ValorColumn" msprop:Generator_ColumnVarNameInTable="columnValor" msprop:Generator_UserColumnName="Valor" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Data" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Data" msprop:Generator_ColumnPropNameInTable="DataColumn" msprop:Generator_ColumnVarNameInTable="columnData" msprop:Generator_UserColumnName="Data" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Categoria" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Categoria" msprop:Generator_ColumnPropNameInTable="CategoriaColumn" msprop:Generator_ColumnVarNameInTable="columnCategoria" msprop:Generator_UserColumnName="Categoria" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descricao" msprop:Generator_ColumnPropNameInRow="Descricao" msprop:Generator_ColumnPropNameInTable="DescricaoColumn" msprop:Generator_ColumnVarNameInTable="columnDescricao" msprop:Generator_UserColumnName="Descricao">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
