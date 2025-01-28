@@ -587,10 +587,12 @@ Public Class frmTransacoes
 #Region "Controle de Eventos"
 
     Private Sub btnFiltraPeriodo_Click(sender As Object, e As EventArgs) Handles btnFiltraPeriodo.Click
+        Dim dtInicio As String = dtpDtIni.Value
+        Dim dtFim As String = dtpDtFim.Value
 
         Call Funcoes.LimpaCamposFormulario(MyBase.Controls)
 
-        Me.ListaTransacoesEfetuadas(Me.lstTrans, 0, 0, Me.dtpDtIni.Value, Me.dtpDtFim.Value, 0, 0)
+        Me.ListaTransacoesEfetuadas(Me.lstTrans, 0, 0, dtInicio, dtFim, 0, 0)
 
     End Sub
 

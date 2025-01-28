@@ -21,7 +21,7 @@ Public Class TransacaoRepository
 
             If Not idcartao.Equals(0) Then sSql += $" And idCartao = {idcartao}"
 
-            If Not String.IsNullOrEmpty(dtde) Then sSql += $" And data between '{dtde}' and '{dtate}'"
+            If Not String.IsNullOrEmpty(dtde) Then sSql += $" And data between '{Date.Parse(dtde):dd-MM-yyyy}' and '{Date.Parse(dtate):dd-MM-yyyy}'"
 
             If Not vlrini.Equals(0) Then sSql += $" And valor >= {sValorIni}"
 
