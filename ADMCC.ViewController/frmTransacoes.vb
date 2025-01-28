@@ -185,14 +185,14 @@ Public Class frmTransacoes
     ''' </summary>
     ''' <param name="lst"></param>
     ''' <returns></returns>
-    Private Function CalculaValorAPagar(lst As ListView) As Double
+    Private Function CalculaValorAPagar(lst As ListView) As Decimal
         Try
             MyBase.Cursor = Cursors.WaitCursor
 
-            Dim valor As Double = 0
+            Dim valor As Decimal = 0
 
             For Each list As ListViewItem In lst.Items
-                valor += Convert.ToDouble(list.SubItems(5).Text)
+                valor += Convert.ToDecimal(list.SubItems(5).Text)
             Next
 
             MyBase.Cursor = Cursors.Default
@@ -507,34 +507,46 @@ Public Class frmTransacoes
     ''' Gera arquivo em excel.
     ''' </summary>
     Private Sub ExportaTransacoesParaExcel()
+        Dim itens = lstTrans
+        Dim nCol As Integer = itens.Columns.Count
+        Dim nRows As Integer = itens.Items.Count
+
         Try
-            For Each list As ListViewItem In lstTrans.Items
-                XcelApp.Application.Workbooks.Add(Type.Missing)
-                For i As Integer = 1 To list.SubItems.Count
-                    XcelApp.Cells(1, 1) = list.SubItems(i - 1).Text
+            XcelApp.Application.Workbooks.Add(Type.Missing)
+
+            For Each item As ListViewItem In lstTrans.Items
+
+                For i As Integer = 1 To item.ListView.Columns.Count
+                    XcelApp.Cells(1, i) = item.ListView.Columns(i - 1).Text
                 Next
 
-                For i As Integer = 0 To list.SubItems.Count - 2
-                    XcelApp.Cells(2, i + 1) = list.SubItems(i).Text
+                For i As Integer = 0 To nRows
+                    If nRows <= 0 Then Exit For
 
-                    For j As Integer = 0 To list.SubItems.Count - 1
-                        XcelApp.Cells(i + 2, j + 1) = list.ListView.Items(i).SubItems(j).Text
+                    For j As Integer = 0 To item.ListView.Columns.Count - 1
+                        XcelApp.Cells(i + 2, j + 1) = item.ListView.Items(i).SubItems(j).Text
 
                     Next
+                    nRows -= 1
+
                 Next
-                Exit For
+
+                If nRows <= 0 Then Exit For
+
             Next
 
             Dim spath As String = Trim(txtPasta.Text)
 
+            XcelApp.Columns.AutoFit()
             XcelApp.ActiveWorkbook.SaveAs(spath)
-            XcelApp.Visible = True
 
+            XcelApp.Visible = True
         Catch ex As Exception
             MessageBox.Show("Erro : " + ex.Message)
-            XcelApp.Quit()
+            '     XcelApp.Quit()
 
         End Try
+
     End Sub
 
     ''' <summary>
